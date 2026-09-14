@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.5rem;
+
+  --background: #f7f6fb;
+  --foreground: #1b1523;
+
+  --card: #ffffff;
+  --card-foreground: #1b1523;
+  --popover: #ffffff;
+  --popover-foreground: #1b1523;
+
+  --primary: #5b3fe0;
+  --primary-foreground: #ffffff;
+
+  --secondary: #ece9f7;
+  --secondary-foreground: #1b1523;
+
+  --muted: #ece9f7;
+  --muted-foreground: #6b6478;
+
+  --accent: #ece9f7;
+  --accent-foreground: #1b1523;
+
+  --destructive: #d33a4b;
+
+  --border: #e1ddf0;
+  --input: #e1ddf0;
+  --ring: #5b3fe0;
+}
+
+.dark {
+  --background: #14111c;
+  --foreground: #f2f0f7;
+
+  --card: #1c1826;
+  --card-foreground: #f2f0f7;
+  --popover: #1c1826;
+  --popover-foreground: #f2f0f7;
+
+  --primary: #9c8cff;
+  --primary-foreground: #14111c;
+
+  --secondary: #262133;
+  --secondary-foreground: #f2f0f7;
+
+  --muted: #262133;
+  --muted-foreground: #9a93ad;
+
+  --accent: #262133;
+  --accent-foreground: #f2f0f7;
+
+  --destructive: #ef5164;
+
+  --border: #2c2739;
+  --input: #2c2739;
+  --ring: #9c8cff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-brand: 'Space Grotesk', system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
